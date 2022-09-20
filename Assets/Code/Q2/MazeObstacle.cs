@@ -14,3 +14,4 @@ public class MazeObstacle : MonoBehaviour
         }
     }
 }
+//
