@@ -26,7 +26,7 @@ namespace SpaceShooter
 
         void OnBecameInvisible()
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
     }
