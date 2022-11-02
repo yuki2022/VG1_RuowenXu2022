@@ -63,7 +63,8 @@ namespace SpaceShooter
                 GameController.instance.money -= cost;
 
                 health = healthMax;
-                imageHealthBar.fillAmount = health / healthMax; 
+                imageHealthBar.fillAmount = health / healthMax;
+
             }
         }
 

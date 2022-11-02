@@ -9,11 +9,12 @@ namespace SpaceShooter
         Rigidbody2D _rb;
 
         //State Tracking
-        Transform target;
+        public Transform target;
 
         void ChooseNearestTarget()
         {
             float closestDistance = 9999f;
+            target = null;
 
             Asteroid[] asteroids = FindObjectsOfType<Asteroid>();
 
