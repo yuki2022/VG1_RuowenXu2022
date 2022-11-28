@@ -9,8 +9,6 @@ namespace Platformer
         {
             if (other.gameObject.GetComponent<Projectile>())
             {
-                PlayerController.instance.score++;
-                PlayerPrefs.SetInt("Score", PlayerController.instance.score);
                 Destroy(gameObject);
             }
         }

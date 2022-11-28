@@ -47,8 +47,6 @@ namespace SpaceShooter
                 GameObject explosion = Instantiate(GameController.instance.explosionPrefab, transform.position,
                     Quaternion.identity);
                 Destroy(explosion, 0.25f);
-
-                GameController.instance.EarnPoints(10);
             }
 
         }
@@ -63,9 +61,8 @@ namespace SpaceShooter
         // Update is called once per frame
         void Update()
         {
-            float acceleration = GameController.instance.missileSpeed / 2f;
-            float maxSpeed = GameController.instance.missileSpeed;
-
+            float acceleration = 1f;
+            float maxSpeed = 2f;
 
             //Home in on target
             ChooseNearestTarget();
