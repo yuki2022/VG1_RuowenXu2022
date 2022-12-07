@@ -68,21 +68,23 @@ namespace Adventure
 
             if (Input.GetKeyDown(KeyCode.Space)) {
                 _animator.SetTrigger("attack");
-            }
+                int facingDirectionIndex = (int)facingDirection;
 
-            int facingDirectionIndex = (int)facingDirection;
+                Transform attackZone = attackZones[facingDirectionIndex];
 
-            Transform attackZone = attackZones[facingDirectionIndex];
+                Collider2D[] hits = Physics2D.OverlapCircleAll(attackZone.position, 0.1f);
 
-            Collider2D[] hits = Physics2D.OverlapCircleAll(attackZone.position, 0.1f);
-
-            foreach(Collider2D hit in hits)
-            {
-                Breakable breakableObject = hit.GetComponent<Breakable>();
-                if (breakableObject) {
-                    breakableObject.Break();
+                foreach (Collider2D hit in hits)
+                {
+                    Breakable breakableObject = hit.GetComponent<Breakable>();
+                    if (breakableObject)
+                    {
+                        breakableObject.Break();
+                    }
                 }
             }
+
+        
         }
 
         void LateUpdate()
